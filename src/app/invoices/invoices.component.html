@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Invoices-Form" />
+    <meta name="keywords" content="Create Invoices,Add item,Add Invoices" />
+    <meta name="author" content="Money on time" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+
+    <div class="main">
+
+      <div class="container">
+
+<div *ngIf="isAlert" class="alert alert-success" role="alert">Invoice Saved !</div>
+        <form>
+          <!--<h1>{{user.name}}</h1>-->
+          <div class="form-group">
+            <!--Invoice No-->
+            <label for="Invoice-No">Invoice #</label>
+            <input
+              class="form-control"
+              name="Invoice-No"
+              id="Invoice-No"
+              type="text"
+              formControlName="Invoice-No"
+              placeholder="Enter Invoice Number"
+            />
+            <br />
+            <!--Desciption of Invoice-->
+            <label for="Description"></label>
+            <input
+              class="form-control"
+              autocomplete="off"
+              name="Description"
+              id="Description"
+              type="text"
+              formControlName="Description"
+              placeholder="Enter a breif description or summary"
+            />
+            <br />
+            <br />
+            <!--Billing and shipping address-->
+            <div class="add">
+              <h3>Billing Address</h3>
+              <h4 class="address" *ngIf="change()">
+                Select customer to add Billing Address
+              </h4>
+              <button
+                *ngIf="!change()"
+                type="button"
+                class="btn btn-lg btn-outline-primary"
+                (click)="open1(content1)"
+                href="abc"
+              >
+                + Add Billing Address
+              </button>
+              <br />
+              <h3>Shipping Address</h3>
+              <h4 class="address" *ngIf="change()">
+                Select customer to add Shipping Address
+              </h4>
+              <button
+                *ngIf="!change()"
+                type="button"
+                class="btn btn-lg btn-outline-primary"
+                (click)="open(content)"
+              >
+                +add shipping address
+              </button>
+
+              <!--modal form for shipping Address-->
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">
+                    Shipping Address
+                  </h4>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <form class="row g-3">
+                        <div class="col-12">
+                          <label for="inputAddress" class="form-label">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputAddress"
+                            placeholder="Add address line 1"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress2" class="form-label">
+                            Address 2
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputAddress2"
+                            placeholder="Add address (optional) min 8 letters"
+                          />
+                        </div>
+                        <div class="col-md-2">
+                          <label for="inputZip" class="form-label">Zip</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputZip"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputCity" class="form-label">City</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputCity"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <label for="inputState" class="form-label"
+                            >State</label
+                          >
+                          <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    (click)="modal.close('Save click')"
+                  >
+                    Save
+                  </button>
+                </div>
+                <!--modal form for billing Address-->
+              </ng-template>
+              <ng-template #content1 let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">
+                    Billing Address
+                  </h4>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <form class="row g-3">
+                        <div class="col-12">
+                          <label for="inputAddress" class="form-label">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputAddress"
+                            placeholder="Add address line 1"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress2" class="form-label">
+                            Address 2
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputAddress2"
+                            placeholder="Add address (optional) min 8 letters"
+                          />
+                        </div>
+                        <div class="col-md-2">
+                          <label for="inputZip" class="form-label">Zip</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputZip"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputCity" class="form-label">City</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputCity"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <label for="inputState" class="form-label"
+                            >State</label
+                          >
+                          <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    (click)="modal.close('Save click')"
+                  >
+                    Save
+                  </button>
+                </div>
+              </ng-template>
+              <!-- Ng modal finalise and issue-->
+              <ng-template #Delete let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title">Delete Invoice</h4>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    The Invoice will be deleted. There is no coming back!. Are
+                    you sure? If you have added any item or customer, you can
+                    still use them in other invoices.&hellip;
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-light No-Delete"
+                    (click)="modal.dismiss('Cross click')"
+                  >
+                    No, Don't!
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary Yes-Delete"
+                    (click)="modal.Save('Submit')"
+                  >
+                    Yes, Delete
+                  </button>
+                </div>
+              </ng-template>
+              <!--Ng modal for Issue Invoice-->
+              <ng-template #Content2 let-modal>
+                <div class="modal-header">
+                  <h2 class="modal-title">Issue Invoice</h2>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <span> Send Invoice and payment instructions to... </span>
+                  </div>
+                  <div>
+                    <!--Data will be fetched by customer list-->
+                  </div>
+                  <div>
+                    A <b>payment link </b>will also be created.<br />
+                    The invoice can<b> not</b> be edited after issuing.
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary Issue"
+                    (click)="modal.submit('Submit click')"
+                  >
+                    Issue Invoice
+                  </button>
+                </div>
+              </ng-template>
+            </div>
+            <!--Billing to-->
+            <label>
+              Billing To
+              <br />
+              <input
+                autocomplete="off"
+                class="Customers"
+                list="Customers"
+                name="Customer"
+                placeholder="Select A customer"
+                (change)="newCustomer($event)"
+              />
+            </label>
+            <datalist id="Customers">
+              <option
+                onclick="change()"
+                *ngFor="let cust of Customers"
+                value="{{ cust}}"
+              >
+                {{ cust }}
+              </option>
+            </datalist>
+          </div>
+          <br />
+          <!--Issue date and billing date-->
+          <div class="form-group">
+            <label for="Issue-Date">Issue Date</label>
+            <input class="Date" type="date" [value]="TodayDate" />
+            <br />
+            <br />
+            <label for="Expiry-Date">Expiry Date</label>
+            <input
+              class="Date"
+              type="date"
+              placeholder="Expiry date"
+              value="Expiry Date"
+              min="{{ TodayDate }}"
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <!--Add line Item-->
+          <div class="form-group">
+            <ul>
+              <li class="Desc">Description</li>
+              <li>Rate/Item</li>
+              <li>QTY</li>
+              <li>Total</li>
+            </ul>
+          </div>
+          <!--Customer Notes -->
+          <div class="form-group">
+            <label for="Customer-Notes">Customer Notes</label>
+            <br />
+            <input
+              class="form-control"
+              name="Customer-Notes"
+              id="Customer-Notes"
+              type="text"
+              formControlName="Customer-Notes"
+              placeholder="Add Customer Notes"
+            />
+            <br />
+            <br />
+            <!--Terms and conditions-->
+            <label for="Terms-And-Conditions">Terms And Conditions</label>
+            <br />
+            <input
+              class="form-control"
+              name="Terms-And-Conditions"
+              id="Terms-And-Conditions"
+              type="text"
+              formControlName="Terms-And-Conditions"
+              placeholder="Add Terms And Conditions"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="buttons">
+        <div class="btn-group-vertical">
+          <button
+            id="buttons"
+            type="button"
+            class="btn btn-primary mb-2 me-2"
+            (click)="openSm(Content2)"
+          >
+            <i class="fa fa-check" aria-hidden="true"></i>Finalize and Issue
+          </button>
+          <br />
+          <button id="buttons" class="btn btn-light" type="button" value="Draft" (click)="alert(isAlert)">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Invoices
+          </button>
+          <button id="buttons" class="btn btn-light" type="button">
+            <i class="fa fa-clone" aria-hidden="true"></i> Duplicate Invoices
+          </button>
+          <button
+            id="buttons"
+            (click)="DeleteInvoice(Delete)"
+            class="btn btn-light"
+            type="button"
+          >
+            <i class="fa fa-times" aria-hidden="true"></i> Delete Invoices
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

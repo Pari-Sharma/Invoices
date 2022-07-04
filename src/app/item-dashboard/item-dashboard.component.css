@@ -1,0 +1,30 @@
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+input{
+  width:250px;
+  height:40px;
+
+}
+textarea{
+  width:250px;
+  height:60px;
+}
+.btn-primary{
+ width:250px;
+}
+table{
+  border: solid 2px;
+  padding:5px;
+}
+th{
+  border: solid 2px;
+  padding:30px;
+}

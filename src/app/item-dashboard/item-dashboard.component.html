@@ -1,0 +1,62 @@
+<div class="container">
+  <button
+    routerLinkActive="active"
+    routerLink="/items"
+    class="btn btn-outline-primary mb-2 me-2"
+    (click)="open(content)"
+  >
+    + New items
+  </button>
+  <ng-template #content let-modal>
+
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-basic-title">Add Item</h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div> <form [formGroup]="formValue" (ngSubmit)="onSubmit()">
+
+    <div class="modal-body ">
+        <div class="mb-6 ">
+          <div class="form-group">
+          <label for="Item">Name</label><br />
+          <input class="form-control" type="text" name="item" placeholder="Item Name" formControlName="ItemName" /><br />
+          <label for="Item-Rate">Rate</label><br />
+          <input class="form-control" type="text" name="Rate" placeholder="Amount" formControlName="ItemRate" /><br />
+          <label for="Description">Description</label><br />
+          <textarea class="form-control" type="textarea" name="Description" formControlName="ItemDescription"></textarea>
+       </div> </div>
+
+    </div>
+    <div class="modal-footer">
+      <button [disabled]="formValue.invalid" id="submit" class="btn btn-primary"  >Submit</button>
+    <button
+        type="button"
+        [disabled]="formValue.invalid" id="Submit"
+        class="btn btn-primary"
+        (click)="modal.close('Save click')"
+      >
+        Save Item
+      </button>
+    </div>
+  </form>
+  </ng-template>
+  <table>
+    <thead>
+      <th>Item ID</th>
+      <th>Item name</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngIf="let item of Items">
+        <td></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

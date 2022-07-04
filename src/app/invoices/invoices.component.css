@@ -1,0 +1,130 @@
+body{
+  padding:5px;
+}
+.form-control{
+border: none;
+padding: 0%;
+border-bottom: solid 1px;
+width:585px;
+outline: none;
+margin-top: 20px;
+border-radius: 0;
+display:inline
+}
+.form-control:focus{
+  border-style: none;
+  border-bottom: solid 1px;
+  box-shadow: none;
+}
+#Invoice-No{
+  width:160px;
+}
+li{
+  list-style: none;
+  display: inline;
+  padding:20px;
+}
+ul{
+  width:580px;
+  height: 30px;
+  background-color: grey;
+  }
+  .list-item {
+align-items: center;  }
+.Desc{
+  padding: 0;
+  margin-right:180px
+}
+.container{
+  background-color:white;
+  display: inline-block;
+  width:650px;
+  padding:20px;
+  margin-left:350px;
+  height:750px;
+  border: double grey 2px;
+}
+.Date{
+  margin-left:12px;
+  display:inline;
+  border:none;
+  border-bottom: solid 1px;
+  color: rgb(209, 209, 209);
+  outline: none;
+}
+.Date:focus{
+  border: none;
+  border-bottom: solid 1px;
+  box-shadow: none;
+  }
+.Customers
+{
+border: none;
+border-bottom: solid 1px;
+outline: none;
+margin-top: 5px;
+border-radius: 0;
+}
+.Customers:focus{
+  border-style: none;
+  border-bottom: solid 1px;
+  box-shadow: none;
+}
+.address{
+  font-size: 12px;
+}
+.add{
+  float: right;
+  margin-right: 65px;;
+}
+button{
+  padding: 0;
+  text-decoration: none;
+}
+.mat-typography h4 {
+
+  margin: 0;
+}
+.col-12 .form-control{
+  width:450px;
+}
+.col-md-6 .form-control{
+  width:150px;
+  margin-top: 10px;
+}
+.col-md-2 .form-control{
+  width: 80px;
+  margin-top: 0px;
+}
+#buttons{
+  padding:0;
+  width:300px;
+  height:70px;
+  margin-right: 40px;
+
+}
+.buttons{
+  float:right;
+  margin-top: 50px;
+}
+.main{
+  overflow: hidden;
+}
+.btn-group-vertical>.btn{
+   width: 80%;
+}
+.submit{
+  width:205px;
+  padding:10px;
+}
+.Issue{
+  width:180px;
+  height:40px;
+  margin-right:40px;
+}
+.No-Delete{
+  width:120px;
+}
+.Yes-Delete{
+  width: 120px;
+}
