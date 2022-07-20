@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +12,9 @@ export class ItemDashboardComponent implements OnInit {
   closeResult!: string;
   formValue !:FormGroup;
   Items: any;
-  constructor(private modalService: NgbModal,private formbuilder:FormBuilder) {
+  url='https://localhost:44323/api/app/app-users';
+
+  constructor(private modalService: NgbModal,private formbuilder:FormBuilder,private http:HttpClient) {
     this.Items=[];
       this.formValue=this.formbuilder.group({
       ItemName:new FormControl('',[Validators.required]),
@@ -21,13 +24,15 @@ export class ItemDashboardComponent implements OnInit {
    }
    public addItem():void{
     this.Items.push(this.formValue.value);
-    console.log(this.Items)
+    //console.log(this.Items)
+    this.http.post(this.url
+    ,this.Items);
     this.formValue.reset();
    }
    deleteFieldValue(index: number) {
     this.Items.splice(index, 1);
 }
-
+ 
   ngOnInit(): void {
 
   }

@@ -44,8 +44,6 @@ td{
 }
 .btn-block {
   width:120px;
-  float:right;
-  margin-top:10px;
   margin-right:5px;
   height:35px
   
@@ -53,12 +51,12 @@ td{
 hr{
   margin-top:50px;
 }
-nav{
+.card-header{
 background-color: aliceblue;
-width:87%;
+width:880px;
 margin-top:40px;
 margin-left:74px;
-height:50px
+height:80px
 }
 .symbol{
   margin-right:10px

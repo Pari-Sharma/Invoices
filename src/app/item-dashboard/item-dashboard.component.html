@@ -1,8 +1,19 @@
-<nav><button cButton color="info" class="btn btn-block btn-primary" 
+<c-card class="text-center">
+  <c-card-header>
+    <c-nav class="card-header-pills" variant="pills">
+      <c-nav-item>
+<button cButton color="info" class="btn btn-block btn-primary" 
 routerLinkActive="active"
 size="sm"
 routerLink="/items"
-(click)="open(content)">+ New items</button></nav>
+(click)="open(content)">+ New items</button>
+      </c-nav-item>
+
+
+    </c-nav>
+  </c-card-header>
+  <c-card-body>
+    <c-card-body>
 <div class="container">
   <ng-template #content let-modal>
     <div class="modal-header">
@@ -61,3 +72,6 @@ routerLink="/items"
     </tbody>
     </table>
 </div>
+</c-card-body>
+</c-card-body>
+</c-card>

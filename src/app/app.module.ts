@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
-
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from "@angular/common/http";
 import { InvoiceDashboardComponent } from './invoice-dashboard/invoice-dashboard.component';
 import { ItemDashboardComponent } from './item-dashboard/item-dashboard.component';
 import { DashComponent } from './dash/dash.component';
@@ -16,6 +14,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,8 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
 
 
   ],
