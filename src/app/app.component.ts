@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'invoice-form';
   constructor(private router:Router){}
   ngOnInit():void{
-    this.router.navigateByUrl('/item-dashboard');
+    this.router.navigateByUrl('/invoices-dashboard');
   }
 }
