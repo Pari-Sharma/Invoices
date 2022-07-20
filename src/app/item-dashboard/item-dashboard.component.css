@@ -17,14 +17,49 @@ textarea{
   width:250px;
   height:60px;
 }
-.btn-primary{
- width:250px;
-}
+
 table{
-  border: solid 2px;
+  margin-top: 20px;
   padding:5px;
 }
 th{
-  border: solid 2px;
-  padding:30px;
+  background-color: #eaeff0;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  padding:10px;
+  width:220px;
+  text-align: center;
+  --fontFamily: Lato;
+}
+td{
+  background-color: whitesmoke;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding:8px;
+  width:220px;
+  text-align: center;
+  --fontFamily: Lato;
+}
+.btn-block {
+  width:120px;
+  float:right;
+  margin-top:10px;
+  margin-right:5px;
+  height:35px
+  
+}
+hr{
+  margin-top:50px;
+}
+nav{
+background-color: aliceblue;
+width:87%;
+margin-top:40px;
+margin-left:74px;
+height:50px
+}
+.symbol{
+  margin-right:10px
 }

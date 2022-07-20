@@ -1,12 +1,19 @@
 body{
   padding:5px;
 }
+.invoice{
+  font-weight: bold;
+  font-size: 20px;
+  color: #58666e;
+  font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .form-control{
 border: none;
 padding: 0%;
 border-bottom: solid 1px;
-width:585px;
 outline: none;
+font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+
 margin-top: 20px;
 border-radius: 0;
 display:inline
@@ -18,6 +25,8 @@ display:inline
 }
 #Invoice-No{
   width:160px;
+  margin-left:10px;
+  font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 li{
   list-style: none;
@@ -25,7 +34,7 @@ li{
   padding:20px;
 }
 ul{
-  width:580px;
+  width:515px;
   height: 30px;
   background-color: grey;
   }
@@ -33,24 +42,26 @@ ul{
 align-items: center;  }
 .Desc{
   padding: 0;
-  margin-right:180px
+  margin-right:100px
 }
 .container{
-  background-color:white;
   display: inline-block;
-  width:650px;
+  width:550px;
   padding:20px;
-  margin-left:350px;
-  height:750px;
-  border: double grey 2px;
-}
+  margin-left:450px;
+  margin-top:50px;
+  font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  height:700px;
+  background-color: white;
+  border-color: #faeacc;}
 .Date{
   margin-left:12px;
   display:inline;
   border:none;
   border-bottom: solid 1px;
-  color: rgb(209, 209, 209);
   outline: none;
+  color: #58666e;
+
 }
 .Date:focus{
   border: none;
@@ -64,6 +75,7 @@ border-bottom: solid 1px;
 outline: none;
 margin-top: 5px;
 border-radius: 0;
+font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .Customers:focus{
   border-style: none;
@@ -100,15 +112,18 @@ button{
   padding:0;
   width:300px;
   height:70px;
-  margin-right: 40px;
-
+  margin-right: 220px;
 }
 .buttons{
   float:right;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .main{
+  width:100%;
+  height:100%;
   overflow: hidden;
+  background-color: #efefef;
+  font-family: "Lato","Lato-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .btn-group-vertical>.btn{
    width: 80%;
@@ -124,7 +139,15 @@ button{
 }
 .No-Delete{
   width:120px;
+  border: none;
 }
 .Yes-Delete{
   width: 120px;
+}
+.btn-lg {
+  border: none;
+  font-size:20px
+}
+element.style{
+  font-size: 10px;
 }

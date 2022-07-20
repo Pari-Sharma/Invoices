@@ -1,42 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Invoices-Form" />
-    <meta name="keywords" content="Create Invoices,Add item,Add Invoices" />
-    <meta name="author" content="Money on time" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
 
     <div class="main">
-
       <div class="container">
-
-<div *ngIf="isAlert" class="alert alert-success" role="alert">Invoice Saved !</div>
-        <form>
+        <!--Alert For Saving the invoices form-->
+        <div *ngIf="isAlert" class="alert alert-success" role="alert">
+          Invoice Saved !
+        </div>
+        <!--Invoices Form-->
+        <form cForm cForm>
           <!--<h1>{{user.name}}</h1>-->
           <div class="form-group">
             <!--Invoice No-->
-            <label for="Invoice-No">Invoice #</label>
-            <input
+            <label cLabel cLabel class="invoice" for="Invoice-No">Invoice #</label>
+             <input cFormControl cFormControl
               class="form-control"
               name="Invoice-No"
               id="Invoice-No"
               type="text"
-              formControlName="Invoice-No"
               placeholder="Enter Invoice Number"
             />
             <br />
             <!--Desciption of Invoice-->
-            <label for="Description"></label>
-            <input
+            <label cLabel cLabel for="Description"></label>
+             <input cFormControl cFormcontrol
               class="form-control"
               autocomplete="off"
               name="Description"
               id="Description"
               type="text"
-              formControlName="Description"
               placeholder="Enter a breif description or summary"
             />
             <br />
@@ -47,7 +37,7 @@
               <h4 class="address" *ngIf="change()">
                 Select customer to add Billing Address
               </h4>
-              <button
+              <button cButton cButton
                 *ngIf="!change()"
                 type="button"
                 class="btn btn-lg btn-outline-primary"
@@ -61,13 +51,13 @@
               <h4 class="address" *ngIf="change()">
                 Select customer to add Shipping Address
               </h4>
-              <button
+              <button cButton cButton
                 *ngIf="!change()"
                 type="button"
                 class="btn btn-lg btn-outline-primary"
                 (click)="open(content)"
               >
-                +add shipping address
+                +Add Shipping Address
               </button>
 
               <!--modal form for shipping Address-->
@@ -76,7 +66,7 @@
                   <h4 class="modal-title" id="modal-basic-title">
                     Shipping Address
                   </h4>
-                  <button
+                  <button cButton cButton
                     type="button"
                     class="btn-close"
                     aria-label="Close"
@@ -84,14 +74,14 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form cForm cForm>
                     <div class="mb-3">
-                      <form class="row g-3">
+                      <form cForm class="row g-3">
                         <div class="col-12">
-                          <label for="inputAddress" class="form-label">
+                          <label cLabel for="inputAddress" class="form-label">
                             Address
                           </label>
-                          <input
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputAddress"
@@ -99,10 +89,10 @@
                           />
                         </div>
                         <div class="col-12">
-                          <label for="inputAddress2" class="form-label">
+                          <label cLabel for="inputAddress2" class="form-label">
                             Address 2
                           </label>
-                          <input
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputAddress2"
@@ -110,28 +100,30 @@
                           />
                         </div>
                         <div class="col-md-2">
-                          <label for="inputZip" class="form-label">Zip</label>
-                          <input
+                          <label cLabel for="inputZip" class="form-label">Zip</label>
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputZip"
                           />
                         </div>
                         <div class="col-md-6">
-                          <label for="inputCity" class="form-label">City</label>
-                          <input
+                          <label cLabel for="inputCity" class="form-label">City</label>
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputCity"
                           />
                         </div>
                         <div class="col-md-4">
-                          <label for="inputState" class="form-label"
+                          <label cLabel for="inputState" class="form-label"
                             >State</label
                           >
-                          <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                          <select aria-label="Default select example" class="inputState" cSelect>
+                            <option>State</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                           </select>
                         </div>
                       </form>
@@ -139,7 +131,7 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button
+                  <button cButton
                     type="button"
                     class="btn btn-outline-dark"
                     (click)="modal.close('Save click')"
@@ -154,7 +146,7 @@
                   <h4 class="modal-title" id="modal-basic-title">
                     Billing Address
                   </h4>
-                  <button
+                  <button cButton
                     type="button"
                     class="btn-close"
                     aria-label="Close"
@@ -162,14 +154,14 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form cForm>
                     <div class="mb-3">
-                      <form class="row g-3">
+                      <form cForm class="row g-3">
                         <div class="col-12">
-                          <label for="inputAddress" class="form-label">
+                          <label cLabel for="inputAddress" class="form-label">
                             Address
                           </label>
-                          <input
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputAddress"
@@ -177,10 +169,10 @@
                           />
                         </div>
                         <div class="col-12">
-                          <label for="inputAddress2" class="form-label">
+                          <label cLabel for="inputAddress2" class="form-label">
                             Address 2
                           </label>
-                          <input
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputAddress2"
@@ -188,28 +180,30 @@
                           />
                         </div>
                         <div class="col-md-2">
-                          <label for="inputZip" class="form-label">Zip</label>
-                          <input
+                          <label cLabel for="inputZip" class="form-label">Zip</label>
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputZip"
                           />
                         </div>
                         <div class="col-md-6">
-                          <label for="inputCity" class="form-label">City</label>
-                          <input
+                          <label cLabel for="inputCity" class="form-label">City</label>
+                           <input cFormControl
                             type="text"
                             class="form-control"
                             id="inputCity"
                           />
                         </div>
                         <div class="col-md-4">
-                          <label for="inputState" class="form-label"
+                          <label cLabel for="inputState" class="form-label"
                             >State</label
                           >
-                          <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                          <select aria-label="Default select example" class="inputState" cSelect>
+                            <option>State</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                           </select>
                         </div>
                       </form>
@@ -217,7 +211,7 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button
+                  <button cButton
                     type="button"
                     class="btn btn-outline-dark"
                     (click)="modal.close('Save click')"
@@ -239,14 +233,14 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <button
+                  <button cButton
                     type="button"
                     class="btn btn-light No-Delete"
                     (click)="modal.dismiss('Cross click')"
                   >
                     No, Don't!
                   </button>
-                  <button
+                  <button cButton
                     type="submit"
                     class="btn btn-primary Yes-Delete"
                     (click)="modal.Save('Submit')"
@@ -259,7 +253,7 @@
               <ng-template #Content2 let-modal>
                 <div class="modal-header">
                   <h2 class="modal-title">Issue Invoice</h2>
-                  <button
+                  <button cButton
                     type="button"
                     class="btn-close"
                     aria-label="Close"
@@ -279,10 +273,10 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button
+                  <button cButton
                     type="button"
                     class="btn btn-primary Issue"
-                    (click)="modal.submit('Submit click')"
+                    (click)="modal.close('Submit click')"
                   >
                     Issue Invoice
                   </button>
@@ -293,7 +287,7 @@
             <label>
               Billing To
               <br />
-              <input
+               <input cFormControl
                 autocomplete="off"
                 class="Customers"
                 list="Customers"
@@ -306,7 +300,7 @@
               <option
                 onclick="change()"
                 *ngFor="let cust of Customers"
-                value="{{ cust}}"
+                value="{{ cust }}"
               >
                 {{ cust }}
               </option>
@@ -315,12 +309,12 @@
           <br />
           <!--Issue date and billing date-->
           <div class="form-group">
-            <label for="Issue-Date">Issue Date</label>
-            <input class="Date" type="date" [value]="TodayDate" />
+            <label cLabel for="Issue-Date">Issue Date</label>
+             <input cFormControl class="Date" type="date" [value]="TodayDate" />
             <br />
             <br />
-            <label for="Expiry-Date">Expiry Date</label>
-            <input
+            <label cLabel for="Expiry-Date">Expiry Date</label>
+             <input cFormControl
               class="Date"
               type="date"
               placeholder="Expiry date"
@@ -331,7 +325,6 @@
           <br />
           <br />
           <br />
-          <!--Add line Item-->
           <div class="form-group">
             <ul>
               <li class="Desc">Description</li>
@@ -340,37 +333,109 @@
               <li>Total</li>
             </ul>
           </div>
+                    <!--Add line Item
+
+          <table>
+            <tbody>
+              <tr *ngFor="let v of getAllItems.value; let i = index">
+                <td>
+                   <input cFormControl
+                    value="{{ v.name }}"
+                    list="options"
+                    (change)="AddOrNotAdd($event, i)"
+                    
+                  />
+                  <datalist id="options">
+                    <option *ngFor="let g of arrayItem">
+                      {{ g.value.name }}
+                    </option>
+                    <option value="add" >Add</option>
+                  </datalist>
+                </td>
+                <td>{{ v.qty }}</td>
+                <td>{{ v.rate }}</td>
+                <td>{{ v.total }}</td>
+                <td *ngIf="arrayItem.length > 0">
+                  <button cButton (click)="DeleteDocumentAndReturnFormGroup(i)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>The Total data is {{ total }}</h2>
+
+          <button cButton (click)="AddNewEmptyItems()">Add Item</button>
+
+          <ng-template #content4 let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+              <button cButton
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form cForm [formGroup]="ItemForm">
+                  Product Name <input cFormControl formControlName="name" /> Product
+                  Rate <input cFormControl formControlName="rate" /> Product Qty <input cFormControl
+                    formControlName="qty"
+                  />
+                  Product Description <input cFormControl formControlName="description" />
+                  <button cButton type="button" (click)="modal.close('Submit')">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button cButton
+                type="button"
+                class="btn btn-outline-dark"
+                (click)="modal.close('Save click')"
+              >
+                Save
+              </button>
+            </div>
+          </ng-template>-->
+          <br>
+          <br><br>
           <!--Customer Notes -->
           <div class="form-group">
-            <label for="Customer-Notes">Customer Notes</label>
+            <label cLabel for="Customer-Notes">Customer Notes</label>
             <br />
-            <input
+             <input cFormControl
               class="form-control"
               name="Customer-Notes"
               id="Customer-Notes"
               type="text"
-              formControlName="Customer-Notes"
               placeholder="Add Customer Notes"
             />
             <br />
             <br />
             <!--Terms and conditions-->
-            <label for="Terms-And-Conditions">Terms And Conditions</label>
+            <label cLabel for="Terms-And-Conditions">Terms And Conditions</label>
             <br />
-            <input
+             <input cFormControl
               class="form-control"
               name="Terms-And-Conditions"
               id="Terms-And-Conditions"
               type="text"
-              formControlName="Terms-And-Conditions"
               placeholder="Add Terms And Conditions"
             />
           </div>
         </form>
       </div>
+      <!--Buttons for Save Invoice,Finalise and issue ,duplicate and delete invoices.
+      Duplicate invoice will be hide after fetching the details if an invoice is already exist the duplicate option will 
+      be shown-->
       <div class="buttons">
         <div class="btn-group-vertical">
-          <button
+          <button cButton
             id="buttons"
             type="button"
             class="btn btn-primary mb-2 me-2"
@@ -379,13 +444,19 @@
             <i class="fa fa-check" aria-hidden="true"></i>Finalize and Issue
           </button>
           <br />
-          <button id="buttons" class="btn btn-light" type="button" value="Draft" (click)="alert(isAlert)">
+          <button cButton
+            id="buttons"
+            class="btn btn-light"
+            type="button"
+            value="Draft"
+            (click)="alert(isAlert)"
+          >
             <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Invoices
           </button>
-          <button id="buttons" class="btn btn-light" type="button">
+          <button cButton id="buttons" class="btn btn-light" type="button">
             <i class="fa fa-clone" aria-hidden="true"></i> Duplicate Invoices
           </button>
-          <button
+          <button cButton
             id="buttons"
             (click)="DeleteInvoice(Delete)"
             class="btn btn-light"
@@ -396,5 +467,3 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
